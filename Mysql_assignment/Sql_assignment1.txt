@@ -1,0 +1,64 @@
+create database mysql_assignment;
+use mysql_assignment;
+
+create table trainer_info(
+trainer_id varchar(20) unique,
+salutation varchar(7),
+trainer_name varchar(30),
+trainer_location varchar(30),
+trainer_qualification varchar(100),
+trainer_experience int,
+trainer_email varchar(100),
+trainer_password varchar(20)
+);
+
+
+create table batch_info(
+batch_id varchar(20) unique,
+batch_owner varchar(30),
+batch_bu_name varchar(30));
+
+create table module_info(
+module_id varchar(20) unique,
+module_name varchar(40),
+module_duration int);
+ 
+create table associate_info(
+associate_id varchar(20) unique,
+salutation varchar(7),
+associate_name varchar(30),
+associate_location varchar(30),
+associate_track varchar(15),
+associate_qualification varchar(200),
+associate_email varchar(100),
+associate_password varchar(20));
+
+create table questions(
+question_id varchar(20) unique,
+module_id varchar(20),
+question_test varchar(900));
+
+create table associate_status(
+associate_id varchar(20),
+module_id varchar(20),
+start_date varchar(20),
+end_date varchar(20),
+afeedbackgiven varchar(20),
+tfeedbackgiven varchar(20));
+
+create table trainer_feedback(
+trainer_id varchar(20),
+question_id varchar(20),
+batch_id varchar(20),
+module_id varchar(20),
+trainer_rating int);
+
+create table associate_feedback(
+associate_id varchar(20),
+question_id varchar(20),
+module_id varchar(20),
+associate_rating int);
+
+create table login_details(
+user_id varchar(20),
+user_password varchar(20));
